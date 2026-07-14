@@ -146,7 +146,7 @@ class _DashboardTopBar extends StatelessWidget {
           height: 48,
           width: 48,
           decoration: BoxDecoration(
-            color: colorScheme.primary.withValues(alpha: 0.12),
+            color: colorScheme.primary.withOpacity(0.12),
             borderRadius: BorderRadius.circular(16),
           ),
           child: Icon(
@@ -171,7 +171,7 @@ class _DashboardTopBar extends StatelessWidget {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
-                  color: colorScheme.onSurface.withValues(alpha: 0.62),
+                  color: colorScheme.onSurface.withOpacity(0.62),
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -250,7 +250,7 @@ class _HeroPanel extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: const Color(0xFF4F46E5).withValues(alpha: 0.25),
+            color: const Color(0xFF4F46E5).withOpacity(0.25),
             blurRadius: 30,
             offset: const Offset(0, 18),
           ),
@@ -267,10 +267,10 @@ class _HeroPanel extends StatelessWidget {
                 height: 58,
                 width: 58,
                 decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.18),
+                  color: Colors.white.withOpacity(0.18),
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: Colors.white.withValues(alpha: 0.22),
+                    color: Colors.white.withOpacity(0.22),
                   ),
                 ),
                 child: const Icon(
@@ -284,10 +284,10 @@ class _HeroPanel extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.15),
+                  color: Colors.white.withOpacity(0.15),
                   borderRadius: BorderRadius.circular(999),
                   border: Border.all(
-                    color: Colors.white.withValues(alpha: 0.18),
+                    color: Colors.white.withOpacity(0.18),
                   ),
                 ),
                 child: const Row(
@@ -326,7 +326,7 @@ class _HeroPanel extends StatelessWidget {
           Text(
             'Warm up with AI, meet a peer, or step into a roleplay scenario built for real-life speaking.',
             style: TextStyle(
-              color: Colors.white.withValues(alpha: 0.86),
+              color: Colors.white.withOpacity(0.86),
               fontSize: isWide ? 17 : 15,
               height: 1.45,
             ),
@@ -375,9 +375,9 @@ class _HeroChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 9),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.16),
+        color: Colors.white.withOpacity(0.16),
         borderRadius: BorderRadius.circular(999),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.18)),
+        border: Border.all(color: Colors.white.withOpacity(0.18)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -416,16 +416,16 @@ class _StatsPanel extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: colorScheme.surface.withValues(alpha: isDark ? 0.82 : 0.96),
+        color: colorScheme.surface.withOpacity(isDark ? 0.82 : 0.96),
         borderRadius: BorderRadius.circular(30),
         border: Border.all(
           color: isDark
-              ? Colors.white.withValues(alpha: 0.08)
+              ? Colors.white.withOpacity(0.08)
               : const Color(0xFFE2E8F0),
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.20 : 0.07),
+            color: Colors.black.withOpacity(isDark ? 0.20 : 0.07),
             blurRadius: 24,
             offset: const Offset(0, 16),
           ),
@@ -464,7 +464,7 @@ class _StatsPanel extends StatelessWidget {
                     value:
                         (provider.dailyStreak / 7).clamp(0.08, 1).toDouble(),
                     backgroundColor:
-                        colorScheme.primary.withValues(alpha: 0.12),
+                        colorScheme.primary.withOpacity(0.12),
                     valueColor: const AlwaysStoppedAnimation<Color>(
                       Color(0xFF22C55E),
                     ),
@@ -474,7 +474,7 @@ class _StatsPanel extends StatelessWidget {
                 Text(
                   'Aim for a 7-day rhythm this week.',
                   style: TextStyle(
-                    color: colorScheme.onSurface.withValues(alpha: 0.58),
+                    color: colorScheme.onSurface.withOpacity(0.58),
                     fontWeight: FontWeight.w600,
                     fontSize: 13,
                   ),
@@ -505,9 +505,9 @@ class _MetricTile extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.10),
+        color: color.withOpacity(0.10),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: color.withValues(alpha: 0.15)),
+        border: Border.all(color: color.withOpacity(0.15)),
       ),
       child: Row(
         children: [
@@ -515,7 +515,7 @@ class _MetricTile extends StatelessWidget {
             height: 42,
             width: 42,
             decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.15),
+              color: color.withOpacity(0.15),
               borderRadius: BorderRadius.circular(15),
             ),
             child: Icon(icon, color: color),
@@ -527,7 +527,7 @@ class _MetricTile extends StatelessWidget {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
-                color: colorScheme.onSurface.withValues(alpha: 0.62),
+                color: colorScheme.onSurface.withOpacity(0.62),
                 fontWeight: FontWeight.w700,
               ),
             ),
@@ -580,7 +580,7 @@ class _SectionHeader extends StatelessWidget {
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
-                  color: colorScheme.onSurface.withValues(alpha: 0.58),
+                  color: colorScheme.onSurface.withOpacity(0.58),
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -689,16 +689,16 @@ class _ActionCard extends StatelessWidget {
         child: Ink(
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: colorScheme.surface.withValues(alpha: isDark ? 0.84 : 0.98),
+            color: colorScheme.surface.withOpacity(isDark ? 0.84 : 0.98),
             borderRadius: BorderRadius.circular(24),
             border: Border.all(
               color: isDark
-                  ? Colors.white.withValues(alpha: 0.08)
-                  : action.color.withValues(alpha: 0.18),
+                  ? Colors.white.withOpacity(0.08)
+                  : action.color.withOpacity(0.18),
             ),
             boxShadow: [
               BoxShadow(
-                color: action.color.withValues(alpha: isDark ? 0.06 : 0.12),
+                color: action.color.withOpacity(isDark ? 0.06 : 0.12),
                 blurRadius: 20,
                 offset: const Offset(0, 12),
               ),
@@ -710,7 +710,7 @@ class _ActionCard extends StatelessWidget {
                 height: 54,
                 width: 54,
                 decoration: BoxDecoration(
-                  color: action.color.withValues(alpha: 0.12),
+                  color: action.color.withOpacity(0.12),
                   borderRadius: BorderRadius.circular(18),
                 ),
                 child: Icon(action.icon, color: action.color, size: 28),
@@ -736,7 +736,7 @@ class _ActionCard extends StatelessWidget {
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
-                        color: colorScheme.onSurface.withValues(alpha: 0.58),
+                        color: colorScheme.onSurface.withOpacity(0.58),
                         fontWeight: FontWeight.w500,
                         height: 1.35,
                       ),
@@ -794,16 +794,16 @@ class _ActivityTile extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: colorScheme.surface.withValues(alpha: isDark ? 0.82 : 0.98),
+        color: colorScheme.surface.withOpacity(isDark ? 0.82 : 0.98),
         borderRadius: BorderRadius.circular(22),
         border: Border.all(
           color: isDark
-              ? Colors.white.withValues(alpha: 0.08)
+              ? Colors.white.withOpacity(0.08)
               : const Color(0xFFE2E8F0),
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.16 : 0.05),
+            color: Colors.black.withOpacity(isDark ? 0.16 : 0.05),
             blurRadius: 18,
             offset: const Offset(0, 10),
           ),
@@ -815,7 +815,7 @@ class _ActivityTile extends StatelessWidget {
             height: 46,
             width: 46,
             decoration: BoxDecoration(
-              color: colorScheme.primary.withValues(alpha: 0.12),
+              color: colorScheme.primary.withOpacity(0.12),
               borderRadius: BorderRadius.circular(16),
             ),
             child: Icon(
@@ -837,7 +837,7 @@ class _ActivityTile extends StatelessWidget {
           const SizedBox(width: 10),
           Icon(
             Icons.chevron_right_rounded,
-            color: colorScheme.onSurface.withValues(alpha: 0.36),
+            color: colorScheme.onSurface.withOpacity(0.36),
           ),
         ],
       ),
@@ -859,10 +859,10 @@ class _ActivitySkeleton extends StatelessWidget {
           height: 78,
           margin: const EdgeInsets.only(bottom: 12),
           decoration: BoxDecoration(
-            color: colorScheme.surface.withValues(alpha: 0.68),
+            color: colorScheme.surface.withOpacity(0.68),
             borderRadius: BorderRadius.circular(22),
             border: Border.all(
-              color: colorScheme.onSurface.withValues(alpha: 0.06),
+              color: colorScheme.onSurface.withOpacity(0.06),
             ),
           ),
           child: Center(
@@ -871,7 +871,7 @@ class _ActivitySkeleton extends StatelessWidget {
               height: 24,
               child: CircularProgressIndicator(
                 strokeWidth: 2,
-                color: colorScheme.primary.withValues(alpha: 0.7),
+                color: colorScheme.primary.withOpacity(0.7),
               ),
             ),
           ),
@@ -893,11 +893,11 @@ class _EmptyActivity extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: colorScheme.surface.withValues(alpha: isDark ? 0.82 : 0.98),
+        color: colorScheme.surface.withOpacity(isDark ? 0.82 : 0.98),
         borderRadius: BorderRadius.circular(24),
         border: Border.all(
           color: isDark
-              ? Colors.white.withValues(alpha: 0.08)
+              ? Colors.white.withOpacity(0.08)
               : const Color(0xFFE2E8F0),
         ),
       ),
@@ -920,7 +920,7 @@ class _EmptyActivity extends StatelessWidget {
             'Start a practice session and it will appear here.',
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: colorScheme.onSurface.withValues(alpha: 0.58),
+              color: colorScheme.onSurface.withOpacity(0.58),
               fontWeight: FontWeight.w500,
             ),
           ),

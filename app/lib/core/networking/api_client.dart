@@ -4,7 +4,7 @@ class ApiClient {
   // static const String baseUrl = 'http://localhost:8000/api/v1';
   static const String baseUrl = 'https://talk-in-english-84cd82ed9809.herokuapp.com/api/v1';
   // static const String wsUrl = 'ws://localhost:8000/ws';
-  static const String wsUrl = 'talk-in-english-84cd82ed9809.herokuapp.com';
+  static const String wsUrl = 'wss://talk-in-english-84cd82ed9809.herokuapp.com/ws';
   static String? _token;
 
   static final Dio dio = Dio(

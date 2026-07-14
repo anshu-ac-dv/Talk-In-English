@@ -175,7 +175,7 @@ class _LoginHeroPanel extends StatelessWidget {
           BoxShadow(
             color: const Color(
               0xFF6366F1,
-            ).withValues(alpha: isDark ? 0.18 : 0.28),
+            ).withOpacity(isDark ? 0.18 : 0.28),
             blurRadius: 32,
             offset: const Offset(0, 18),
           ),
@@ -189,9 +189,9 @@ class _LoginHeroPanel extends StatelessWidget {
             height: isCompact ? 68 : 84,
             width: isCompact ? 68 : 84,
             decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.18),
+              color: Colors.white.withOpacity(0.18),
               borderRadius: BorderRadius.circular(24),
-              border: Border.all(color: Colors.white.withValues(alpha: 0.24)),
+              border: Border.all(color: Colors.white.withOpacity(0.24)),
             ),
             child: Icon(
               Icons.record_voice_over_rounded,
@@ -213,7 +213,7 @@ class _LoginHeroPanel extends StatelessWidget {
           Text(
             'Build confidence with AI conversations, live practice, and roleplay sessions designed for everyday speaking.',
             style: TextStyle(
-              color: Colors.white.withValues(alpha: 0.86),
+              color: Colors.white.withOpacity(0.86),
               fontSize: isCompact ? 15 : 17,
               height: 1.5,
             ),
@@ -237,7 +237,7 @@ class _LoginHeroPanel extends StatelessWidget {
               children: [
                 Icon(
                   Icons.bolt_rounded,
-                  color: Colors.white.withValues(alpha: 0.9),
+                  color: Colors.white.withOpacity(0.9),
                   size: 18,
                 ),
                 const SizedBox(width: 8),
@@ -245,7 +245,7 @@ class _LoginHeroPanel extends StatelessWidget {
                   child: Text(
                     'Practice smarter every day',
                     style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.9),
+                      color: Colors.white.withOpacity(0.9),
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -270,9 +270,9 @@ class _HeroChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
       decoration: BoxDecoration(
-        color: Colors.white.withValues(alpha: 0.16),
+        color: Colors.white.withOpacity(0.16),
         borderRadius: BorderRadius.circular(18),
-        border: Border.all(color: Colors.white.withValues(alpha: 0.18)),
+        border: Border.all(color: Colors.white.withOpacity(0.18)),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
@@ -321,19 +321,19 @@ class _LoginFormCard extends StatelessWidget {
         return Container(
           padding: const EdgeInsets.all(28),
           decoration: BoxDecoration(
-            color: colorScheme.surface.withValues(
-              alpha: isDark ? 0.92 : 0.96,
+            color: colorScheme.surface.withOpacity(
+              isDark ? 0.92 : 0.96,
             ),
             borderRadius: BorderRadius.circular(28),
             border: Border.all(
               color: isDark
-                  ? Colors.white.withValues(alpha: 0.08)
+                  ? Colors.white.withOpacity(0.08)
                   : const Color(0xFFE2E8F0),
             ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withValues(
-                  alpha: isDark ? 0.22 : 0.08,
+                color: Colors.black.withOpacity(
+                  isDark ? 0.22 : 0.08,
                 ),
                 blurRadius: 30,
                 offset: const Offset(0, 20),
@@ -359,7 +359,7 @@ class _LoginFormCard extends StatelessWidget {
                 Text(
                   'Sign in to continue your speaking journey.',
                   style: TextStyle(
-                    color: colorScheme.onSurface.withValues(alpha: 0.62),
+                    color: colorScheme.onSurface.withOpacity(0.62),
                     fontSize: 15,
                     height: 1.4,
                   ),
@@ -461,7 +461,7 @@ class _LoginFormCard extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Divider(
-                        color: colorScheme.onSurface.withValues(alpha: 0.12),
+                        color: colorScheme.onSurface.withOpacity(0.12),
                       ),
                     ),
                     Padding(
@@ -469,7 +469,7 @@ class _LoginFormCard extends StatelessWidget {
                       child: Text(
                         'or continue with',
                         style: TextStyle(
-                          color: colorScheme.onSurface.withValues(alpha: 0.52),
+                          color: colorScheme.onSurface.withOpacity(0.52),
                           fontSize: 12,
                           fontWeight: FontWeight.w700,
                           letterSpacing: 0.8,
@@ -478,7 +478,7 @@ class _LoginFormCard extends StatelessWidget {
                     ),
                     Expanded(
                       child: Divider(
-                        color: colorScheme.onSurface.withValues(alpha: 0.12),
+                        color: colorScheme.onSurface.withOpacity(0.12),
                       ),
                     ),
                   ],
@@ -491,7 +491,7 @@ class _LoginFormCard extends StatelessWidget {
                       foregroundColor: colorScheme.onSurface,
                       side: BorderSide(
                         color: isDark
-                            ? Colors.white.withValues(alpha: 0.14)
+                            ? Colors.white.withOpacity(0.14)
                             : const Color(0xFFE2E8F0),
                       ),
                       shape: RoundedRectangleBorder(
@@ -523,7 +523,7 @@ class _LoginFormCard extends StatelessWidget {
                     text: TextSpan(
                       text: 'New here? ',
                       style: TextStyle(
-                        color: colorScheme.onSurface.withValues(alpha: 0.72),
+                        color: colorScheme.onSurface.withOpacity(0.72),
                         fontSize: 15,
                       ),
                       children: [

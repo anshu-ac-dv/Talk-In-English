@@ -203,14 +203,14 @@ class _RoleplayScreenState extends State<RoleplayScreen> {
                                     backgroundColor: Theme.of(context)
                                         .colorScheme
                                         .primary
-                                        .withValues(alpha: 0.2),
+                                        .withOpacity(0.2),
                                   ),
                                   if (scenario['category'] != null) ...[
                                     const SizedBox(width: 8),
                                     Chip(
                                       label: Text(scenario['category']),
                                       backgroundColor:
-                                          Colors.blue.withValues(alpha: 0.2),
+                                          Colors.blue.withOpacity(0.2),
                                     ),
                                   ],
                                 ],
@@ -246,7 +246,7 @@ class _RoleplayScreenState extends State<RoleplayScreen> {
                     selectedColor: Theme.of(context)
                         .colorScheme
                         .primary
-                        .withValues(alpha: 0.2),
+                        .withOpacity(0.2),
                   );
                 })
                 .toList(),
@@ -275,7 +275,7 @@ class _RoleplayScreenState extends State<RoleplayScreen> {
         color: isDark ? Theme.of(context).colorScheme.surface : Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
+            color: Colors.black.withOpacity(0.05),
             offset: const Offset(0, -4),
             blurRadius: 10,
           ),
@@ -322,7 +322,7 @@ class _RoleplayScreenState extends State<RoleplayScreen> {
                       color: (provider.isRecording
                               ? Colors.red
                               : Theme.of(context).colorScheme.primary)
-                          .withValues(alpha: 0.4),
+                          .withOpacity(0.4),
                       blurRadius: 12,
                       spreadRadius: 2,
                     ),

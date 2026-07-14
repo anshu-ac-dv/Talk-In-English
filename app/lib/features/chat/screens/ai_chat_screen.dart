@@ -176,7 +176,7 @@ class _AiChatScreenState extends State<AiChatScreen> {
         color: isDark ? Theme.of(context).colorScheme.surface : Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
+            color: Colors.black.withOpacity(0.05),
             offset: const Offset(0, -4),
             blurRadius: 10,
           ),
@@ -245,7 +245,7 @@ class _AiChatScreenState extends State<AiChatScreen> {
                   boxShadow: [
                     if (provider.isRecording)
                       BoxShadow(
-                        color: Colors.red.withValues(alpha: 0.5),
+                        color: Colors.red.withOpacity(0.5),
                         blurRadius: 10,
                         spreadRadius: 2,
                       )

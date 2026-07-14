@@ -8,6 +8,7 @@ class AuthProvider extends ChangeNotifier {
   bool _isLoading = false;
   String? _token;
   String? _errorMessage;
+  bool _isGoogleSignInInitialized = false;
 
   bool get isAuthenticated => _isAuthenticated;
   bool get isLoading => _isLoading;
@@ -100,7 +101,7 @@ class AuthProvider extends ChangeNotifier {
     notifyListeners();
 
     try {
-      await GoogleSignIn.instance.initialize();
+      await _initializeGoogleSignIn();
       final GoogleSignInAccount account =
           await GoogleSignIn.instance.authenticate(
         scopeHint: ['email'],
@@ -142,6 +143,13 @@ class AuthProvider extends ChangeNotifier {
       _isLoading = false;
       notifyListeners();
     }
+  }
+
+  Future<void> _initializeGoogleSignIn() async {
+    if (_isGoogleSignInInitialized) return;
+
+    await GoogleSignIn.instance.initialize();
+    _isGoogleSignInInitialized = true;
   }
 
   String _formatDioError(DioException e, {required String fallback}) {
