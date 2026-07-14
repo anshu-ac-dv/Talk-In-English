@@ -13,6 +13,7 @@ class AiChatProvider extends ChangeNotifier {
   bool _isRecording = false;
   String? _sessionId;
   bool _isStarting = false;
+  String? _errorMessage;
 
   final List<ChatMessage> _messages = [];
 
@@ -21,6 +22,7 @@ class AiChatProvider extends ChangeNotifier {
   bool get isRecording => _isRecording;
   bool get isStarting => _isStarting;
   String? get sessionId => _sessionId;
+  String? get errorMessage => _errorMessage;
   List<ChatMessage> get messages => List.unmodifiable(_messages);
 
   /// Start a new AI chat session by creating a room and joining it
@@ -29,6 +31,7 @@ class AiChatProvider extends ChangeNotifier {
 
     _isStarting = true;
     _isConnecting = true;
+    _errorMessage = null;
     notifyListeners();
 
     try {
@@ -54,6 +57,7 @@ class AiChatProvider extends ChangeNotifier {
       debugPrint('Failed to start session: $e');
       _sessionId = null;
       _isConnected = false;
+      _errorMessage = 'Could not start the AI conversation. Please try again.';
     } finally {
       _isStarting = false;
       _isConnecting = false;
@@ -88,6 +92,9 @@ class AiChatProvider extends ChangeNotifier {
 
   void _handleDisconnect() {
     _isConnected = false;
+    if (_sessionId != null) {
+      _errorMessage = 'Connection lost. Please end this chat and start again.';
+    }
     notifyListeners();
   }
 
@@ -101,13 +108,21 @@ class AiChatProvider extends ChangeNotifier {
   }
 
   /// Send a text-based message (for testing without audio)
-  void sendMessage(String text) {
-    if (text.trim().isEmpty || !_isConnected) return;
+  bool sendMessage(String text) {
+    final trimmedText = text.trim();
+    if (trimmedText.isEmpty) return false;
+    if (!_isConnected) {
+      _errorMessage = 'AI Coach is not connected yet.';
+      notifyListeners();
+      return false;
+    }
 
     _sessionWsManager.sendMessage({
       'event': 'message.send',
-      'data': {'content': text.trim()},
+      'data': {'content': trimmedText},
     });
+    _errorMessage = null;
+    return true;
   }
 
   void toggleRecording() {
@@ -130,6 +145,8 @@ class AiChatProvider extends ChangeNotifier {
       await _roomService.endSession(_sessionId!);
       _sessionId = null;
       _isConnected = false;
+      _isRecording = false;
+      _errorMessage = null;
       _sessionWsManager.disconnect();
       _audioWsManager.disconnect();
       _messages.clear();
